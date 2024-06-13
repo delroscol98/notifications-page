@@ -1,0 +1,65 @@
+/* VARIABLES */
+:root {
+  --red: hsl(1, 90%, 64%);
+  --blue: hsl(219, 85%, 26%);
+  --white: hsl(0, 0%, 100%);
+  --light-blue-1: hsl(210, 60%, 98%);
+  --light-blue-2: hsl(211, 68%, 94%);
+  --light-blue-3: hsl(205, 33%, 90%);
+  --grey-blue-1: hsl(219, 14%, 63%);
+  --grey-blue-2: hsl(219, 12%, 42%);
+  --grey-blue-3: hsl(224, 21%, 14%);
+}
+
+/* TYPOGRAPHY */
+@import url("https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap");
+
+.ff-body {
+  font-size: 1.6rem;
+  font-weight: 500;
+}
+
+.ff-body-bold {
+  font-size: 1.6rem;
+  font-weight: 800;
+}
+
+.heading {
+  font-size: 2.4rem;
+  font-weight: 800;
+}
+
+/* BASE */
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: "Plus Jakarta Sans", sans-serif;
+  box-sizing: border-box;
+  min-height: 100vh;
+  background-color: var(--light-blue-1);
+}
+
+/* APP */
+.App {
+  padding: 2.4rem 1.6rem;
+  width: min(100%, 73rem);
+  background-color: var(--white);
+}
+
+@media screen and (min-width: 45.625em) {
+  .App {
+    padding: 3.2rem;
+    margin: 6.3rem auto;
+    border-radius: 1.5rem;
+  }
+}
