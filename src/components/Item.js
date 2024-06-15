@@ -1,8 +1,9 @@
 import "./Item.css";
 
 const Item = ({ item }) => {
+  const test = (e) => console.log(e.target);
   return (
-    <div className={`item ${!item.read && "unread"}`}>
+    <div className={`item ${!item.read && "unread"}`} onClick={test}>
       <img className="item__image" src={item.image} alt={item.name} />
       <div className="item__details-box">
         <p>

@@ -19,6 +19,7 @@
 
 .item__name {
   color: var(--grey-blue-3);
+  cursor: pointer;
 }
 
 .item__details {
@@ -37,7 +38,7 @@
 .item__linkImg {
   width: 3.9rem;
   height: 3.9rem;
-  float: right;
+  cursor: pointer;
 }
 
 .item__time {
@@ -59,6 +60,12 @@
   border-radius: 0.5rem;
   padding: 1.6rem;
   margin-top: 1.2rem;
+  transition: all 0.2s;
+}
+
+.item__message:hover {
+  cursor: pointer;
+  background-color: var(--light-blue-2);
 }
 
 /* UTILITIES */
