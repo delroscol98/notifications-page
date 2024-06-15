@@ -1,11 +1,13 @@
 import "./Header.css";
 
-const Header = ({ onReadAllNotifications }) => {
+const Header = ({ numReadNotifications, onReadAllNotifications }) => {
   return (
     <header className="header">
       <section className="header__box">
         <h1 className="header__heading heading">Notifications</h1>
-        <span className="header__number ff-body-bold">3</span>
+        <span className="header__number ff-body-bold">
+          {numReadNotifications.length}
+        </span>
       </section>
       <button
         className="header__button ff-body"

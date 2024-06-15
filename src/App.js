@@ -96,6 +96,9 @@ const initialNotifications = [
 
 function App() {
   const [notifications, setNotifications] = useState(initialNotifications);
+  const numReadNotifications = notifications.filter(
+    (notification) => notification.read === false
+  );
 
   const readAllNotifications = () => {
     setNotifications((notifications) =>
@@ -117,7 +120,10 @@ function App() {
 
   return (
     <div className="App">
-      <Header onReadAllNotifications={readAllNotifications} />
+      <Header
+        numReadNotifications={numReadNotifications}
+        onReadAllNotifications={readAllNotifications}
+      />
       <Notifications
         notifications={notifications}
         onSelectNotification={setNotificationsHandler}
