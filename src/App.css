@@ -15,12 +15,12 @@
 @import url("https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap");
 
 .ff-body {
-  font-size: 1.6rem;
+  font-size: clamp(1.4rem, 3.733vw, 1.6rem);
   font-weight: 500;
 }
 
 .ff-body-bold {
-  font-size: 1.6rem;
+  font-size: clamp(1.4rem, 3.733vw, 1.6rem);
   font-weight: 800;
 }
 
@@ -54,6 +54,8 @@ body {
   padding: 2.4rem 1.6rem;
   width: min(100%, 73rem);
   background-color: var(--white);
+  display: grid;
+  gap: 2.4rem;
 }
 
 @media screen and (min-width: 45.625em) {
