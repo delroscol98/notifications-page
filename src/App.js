@@ -97,6 +97,14 @@ const initialNotifications = [
 function App() {
   const [notifications, setNotifications] = useState(initialNotifications);
 
+  const readAllNotifications = () => {
+    setNotifications((notifications) =>
+      notifications.map((notification) => {
+        return { ...notification, read: true };
+      })
+    );
+  };
+
   const setNotificationsHandler = (selected) => {
     setNotifications((notifications) => {
       return notifications.map((notification) => {
@@ -109,7 +117,7 @@ function App() {
 
   return (
     <div className="App">
-      <Header />
+      <Header onReadAllNotifications={readAllNotifications} />
       <Notifications
         notifications={notifications}
         onSelectNotification={setNotificationsHandler}
