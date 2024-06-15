@@ -15,6 +15,7 @@ import Notifications from "./components/Notifications";
 
 const initialNotifications = [
   {
+    id: 1,
     image: markWebberImg,
     name: "Mark Webber",
     details: "reacted to your recent post",
@@ -25,6 +26,7 @@ const initialNotifications = [
     read: false,
   },
   {
+    id: 2,
     image: angelaGrayImg,
     name: "Angela Gray",
     details: "followed you",
@@ -35,6 +37,7 @@ const initialNotifications = [
     read: false,
   },
   {
+    id: 3,
     image: jacobThompsonImg,
     name: "Jacob Thompson",
     details: "has joined your group",
@@ -45,6 +48,7 @@ const initialNotifications = [
     read: false,
   },
   {
+    id: 4,
     image: rizkyHasanuddinImg,
     name: "Rizky Hasanuddin",
     details: "sent you a private message",
@@ -56,6 +60,7 @@ const initialNotifications = [
     read: false,
   },
   {
+    id: 5,
     image: kimberlySmithImg,
     name: "Kimberly Smith",
     details: "commented on your picture",
@@ -66,6 +71,7 @@ const initialNotifications = [
     read: false,
   },
   {
+    id: 6,
     image: nathanPetersonImg,
     name: "Nathan Peterson",
     details: "reacted to your recent post",
@@ -76,6 +82,7 @@ const initialNotifications = [
     read: false,
   },
   {
+    id: 7,
     image: annaKimImg,
     name: "Anna Kim",
     details: "left the group",
@@ -89,12 +96,24 @@ const initialNotifications = [
 
 function App() {
   const [notifications, setNotifications] = useState(initialNotifications);
-  const [selectedNotification, setSelectedNotification] = useState(null);
+
+  const setNotificationsHandler = (selected) => {
+    setNotifications((notifications) => {
+      return notifications.map((notification) => {
+        return selected?.name === notification.name
+          ? { ...notification, read: true }
+          : notification;
+      });
+    });
+  };
 
   return (
     <div className="App">
       <Header />
-      <Notifications notifications={notifications} />
+      <Notifications
+        notifications={notifications}
+        onSelectNotification={setNotificationsHandler}
+      />
     </div>
   );
 }

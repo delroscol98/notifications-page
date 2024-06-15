@@ -1,9 +1,11 @@
 import "./Item.css";
 
-const Item = ({ item }) => {
-  const test = (e) => console.log(e.target);
+const Item = ({ item, onClick }) => {
   return (
-    <div className={`item ${!item.read && "unread"}`} onClick={test}>
+    <div
+      className={`item ${!item.read ? "unread" : ""}`}
+      onClick={() => onClick(item)}
+    >
       <img className="item__image" src={item.image} alt={item.name} />
       <div className="item__details-box">
         <p>
