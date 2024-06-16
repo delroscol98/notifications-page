@@ -13,7 +13,7 @@ const Item = ({ item, onClick }) => {
           &nbsp;
           <span className="item__details ff-body">{item.details}</span>
           &nbsp;
-          <a href="#" className="item__link ff-body-bold">
+          <a href="./" className="item__link ff-body-bold">
             {item.link}
           </a>
           {!item.read && <span className="item__unread">&nbsp;</span>}
