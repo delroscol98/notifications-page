@@ -5,9 +5,11 @@ const Header = ({ numReadNotifications, onReadAllNotifications }) => {
     <header className="header">
       <section className="header__box">
         <h1 className="header__heading heading">Notifications</h1>
-        <span className="header__number ff-body-bold">
-          {numReadNotifications.length}
-        </span>
+        {numReadNotifications.length !== 0 && (
+          <span className="header__number ff-body-bold">
+            {numReadNotifications.length}
+          </span>
+        )}
       </section>
       <button
         className="header__button ff-body"
